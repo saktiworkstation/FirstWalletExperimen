@@ -1,7 +1,5 @@
 # 🌟 Digital Wallet Experiment 🌟
 
-![Digital Wallet Logo](link-to-your-logo.png)
-
 Selamat datang di Digital Wallet Experiment, proyek eksperimen pertama saya dalam menciptakan dompet digital yang inovatif! 🚀
 
 ## Tentang Proyek
