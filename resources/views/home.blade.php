@@ -76,4 +76,22 @@
             </div>
         </div>
     </div>
+
+    <div class="container col-xxl-8 px-3 py-3">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="img/wallet-team.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
+                    height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">About this Proyek</h1>
+                <p class="lead">The Digital Wallet Experiment is an exploratory effort to create a secure, convenient, and
+                    user-friendly digital wallet solution. This project marks my first step into the world of developing
+                    online financial applications.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Go to Repository Git</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
