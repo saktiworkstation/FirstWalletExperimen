@@ -8,12 +8,12 @@
                 <p class="col-md-8 fs-4">This project aims to create a digital wallet platform that facilitates users in
                     conducting online financial transactions. The platform will provide features such as digital money
                     storage, money transfer, bill payments, and transaction history tracking.</p>
-                <button class="btn btn-primary btn-lg" type="button">Example button</button>
+                <button class="btn btn-primary btn-lg" type="button">Make Your Wallet Now!</button>
             </div>
         </div>
     </div>
 
-    <div class="container px-4 py-5" id="icon-grid">
+    <div class="container px-4 py-5" id="Features">
         <h2 class="pb-2 border-bottom">Main Feature</h2>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
@@ -77,7 +77,7 @@
         </div>
     </div>
 
-    <div class="container col-xxl-8 px-3 py-3">
+    <div class="container col-xxl-8 px-3 py-3" id="About">
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
             <div class="col-10 col-sm-8 col-lg-6">
                 <img src="img/wallet-team.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
