@@ -38,14 +38,10 @@
                     @else
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item px-3">
-                                <button type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                    data-bs-target="#signin">Sign
-                                    In</button>
+                                <a href="/sign-in" class="btn btn-outline-info">Sign In</a>
                             </li>
                             <li class="nav-item">
-                                <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                    data-bs-target="#signup">Sign
-                                    Up</button>
+                                <a href="/sign-up" class="btn btn-info">Sign Up</a>
                             </li>
                         </ul>
                     @endauth

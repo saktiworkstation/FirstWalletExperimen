@@ -10,9 +10,9 @@ class SignUpController extends Controller
 {
     public function index()
     {
-        return view('register.index', [
-            'title' => 'Register',
-            'active' => 'register'
+        return view('signup.index', [
+            'title' => 'Sign Up',
+            'active' => 'Sign Up'
         ]);
     }
 
@@ -29,6 +29,6 @@ class SignUpController extends Controller
 
         User::create($validatedData);
 
-        return redirect('/login')->with('success', 'Register successfully! Please login');
+        return redirect('/sign-in')->with('success', 'Sign-up successfully! Please sign-in');
     }
 }

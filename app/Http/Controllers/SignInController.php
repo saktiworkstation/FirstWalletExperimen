@@ -9,9 +9,9 @@ class SignInController extends Controller
 {
     public function index()
     {
-        return view('login.index', [
-            'title' => 'Login',
-            'active' => 'login'
+        return view('signin.index', [
+            'title' => 'Sign In',
+            'active' => 'Sign In'
         ]);
     }
 
@@ -27,10 +27,10 @@ class SignInController extends Controller
             return redirect()->intended('/dashboard');
         }
 
-        return back()->with('loginError', 'Login failed!');
+        return back()->with('loginError', 'sign-in failed!');
     }
 
-    public function logout()
+    public function signOut()
     {
         Auth::logout();
 

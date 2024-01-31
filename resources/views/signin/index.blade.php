@@ -19,7 +19,7 @@
 
             <main class="form-signin">
                 <h1 class="h3 mb-3 fw-normal text-center">Please Login</h1>
-                <form action="/login" method="post">
+                <form action="/sign-in" method="post">
                     @csrf
                     <div class="form-floating">
                         <input type="email" name="email"
@@ -42,7 +42,7 @@
 
                     <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
                 </form>
-                <small class="d-block text-center mt-3">Not Registered? <a href="/register">Register now!</a></small>
+                <small class="d-block text-center mt-3">Not Registered? <a href="/sign-up">Register now!</a></small>
             </main>
         </div>
     </div>

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\SignInController;
+use App\Http\Controllers\SignUpController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/sign-in', [SignInController::class, 'index'])->name('sign-in')->middleware('guest');
+Route::post('/sign-in', [SignInController::class, 'authenticate']);
+Route::post('/sign-out', [SignInController::class, 'signOut']);
+
+Route::get('/sign-up', [SignUpController::class, 'index'])->middleware('guest');
+Route::post('/sign-up', [SignUpController::class, 'store']);
