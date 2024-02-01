@@ -9,9 +9,45 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
-                    <span data-feather="file-text"></span>
-                    My Posts
+                <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="/dashboard/">
+                    <span data-feather="dollar-sign"></span>
+                    Top Up and Withdrawal
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="/dashboard/">
+                    <span data-feather="external-link"></span>
+                    Money Transfer
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="/dashboard/">
+                    <span data-feather="credit-card"></span>
+                    Bill Payments
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="/dashboard/">
+                    <span data-feather="shield"></span>
+                    Security Features
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="/dashboard/">
+                    <span data-feather="gift"></span>
+                    Promotions and Discounts
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="/dashboard/">
+                    <span data-feather="flag"></span>
+                    Reports and Analysis
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="/dashboard/">
+                    <span data-feather="help-circle"></span>
+                    Help Center and Support
                 </a>
             </li>
         </ul>
