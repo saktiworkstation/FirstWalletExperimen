@@ -25,3 +25,7 @@ Route::post('/sign-out', [SignInController::class, 'signOut']);
 
 Route::get('/sign-up', [SignUpController::class, 'index'])->middleware('guest');
 Route::post('/sign-up', [SignUpController::class, 'store']);
+
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+})->middleware('auth');
