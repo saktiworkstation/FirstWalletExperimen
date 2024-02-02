@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
+use App\Http\Controllers\WalletController;
 use App\Models\Wallet;
 use Illuminate\Support\Facades\Route;
 
@@ -32,3 +33,5 @@ Route::get('/dashboard', function () {
         'wallets' => Wallet::where('user_id', auth()->user()->id)->get()
     ]);
 })->middleware('auth');
+
+Route::resource('dashboard/wallets', WalletController::class)->middleware('auth');

@@ -58,10 +58,9 @@
             </h6>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('dashboard/categories*') ? 'active' : '' }}"
-                        href="/dashboard/categories">
+                    <a class="nav-link {{ Request::is('dashboard/wallets*') ? 'active' : '' }}" href="/dashboard/wallets">
                         <span data-feather="grid"></span>
-                        Posts Categories
+                        Users Wallets
                     </a>
                 </li>
             </ul>
