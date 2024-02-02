@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
+use App\Models\Wallet;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,5 +28,7 @@ Route::get('/sign-up', [SignUpController::class, 'index'])->middleware('guest');
 Route::post('/sign-up', [SignUpController::class, 'store']);
 
 Route::get('/dashboard', function () {
-    return view('dashboard.index');
+    return view('dashboard.index', [
+        'wallets' => Wallet::where('user_id', auth()->user()->id)->get()
+    ]);
 })->middleware('auth');
