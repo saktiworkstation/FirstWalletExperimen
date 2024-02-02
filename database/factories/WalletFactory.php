@@ -18,6 +18,7 @@ class WalletFactory extends Factory
     {
         return [
             'user_id' => mt_rand(1, 5),
+            'name' => fake()->name(),
             'balance' => $this->faker->numberBetween(1000, 10000),
         ];
     }
