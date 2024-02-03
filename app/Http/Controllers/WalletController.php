@@ -30,7 +30,16 @@ class WalletController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+        ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['balance'] = 0;
+
+        Wallet::create($validatedData);
+
+        return redirect('/dashboard')->with('success', 'New Wallet has been added!');
     }
 
     /**
