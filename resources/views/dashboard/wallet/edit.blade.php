@@ -6,7 +6,8 @@
     </div>
 
     <div class="col-lg-8">
-        <form method="post" action="/dashboard/wallets" class="mb-5" enctype="multipart/form-data">
+        <form method="post" action="/dashboard/wallets/{{ $wallet->name }}" class="mb-5" enctype="multipart/form-data">
+            @method('put')
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Wallet Name</label>

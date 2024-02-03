@@ -65,7 +65,17 @@ class WalletController extends Controller
      */
     public function update(Request $request, Wallet $wallet)
     {
-        //
+        $rules = [
+            'name' => 'required|max:255'
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        Wallet::where('id', $wallet->id)->update($validatedData);
+
+        return redirect('/dashboard')->with('success', 'Wallet has been updated!');
     }
 
     /**
