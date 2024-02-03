@@ -29,6 +29,9 @@
                                         <p class="card-text"><small
                                                 class="text-body-secondary">{{ $wallet->created_at->diffForHumans() }}</small>
                                         </p>
+                                        <a href="/dashboard/wallets/{{ $wallet->name }}/edit" class="btn btn-warning"><span
+                                                data-feather="edit"></span>
+                                            Change wallet name</a>
                                     </div>
                                 </div>
                             </div>

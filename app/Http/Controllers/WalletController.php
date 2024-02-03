@@ -55,7 +55,9 @@ class WalletController extends Controller
      */
     public function edit(Wallet $wallet)
     {
-        //
+        return view('dashboard.wallet.edit', [
+            'wallet' => $wallet
+        ]);
     }
 
     /**
