@@ -5,6 +5,15 @@
         <h1 class="h2">Welcome back, {{ auth()->user()->name }}</h1>
     </div>
 
+    <a href="/dashboard/wallets/create" class="btn btn-primary">Create New Wallet</a>
+
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show col-lg-8" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <div class="container py-3">
         <div class="row">
             <h2 class="pb-3">My Wallets</h2>
