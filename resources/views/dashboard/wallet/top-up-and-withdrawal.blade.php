@@ -7,36 +7,37 @@
 
     <div class="col-lg-8">
         <h2>Top Up</h2>
-        <form method="post" action="/dashboard/wallets" class="mb-5" enctype="multipart/form-data">
+        <form method="post" action="/dashboard/topup-withdrawal/topup" class="mb-5" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-                <label for="name" class="form-label">Wallet Name</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
-                    required autofocus value="{{ old('name') }}">
-                @error('name')
+                <label for="balance" class="form-label">Top up amount</label>
+                <input type="text" class="form-control @error('balance') is-invalid @enderror" id="balance"
+                    balance="balance" required autofocus value="{{ old('balance') }}">
+                @error('balance')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Create Wallet</button>
+            <button type="submit" class="btn btn-primary">Top Up</button>
         </form>
     </div>
+
     <div class="col-lg-8">
         <h2>Withdrawal</h2>
-        <form method="post" action="/dashboard/wallets" class="mb-5" enctype="multipart/form-data">
+        <form method="post" action="/dashboard/topup-withdrawal/withdrawal" class="mb-5" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-                <label for="name" class="form-label">Wallet Name</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
-                    required autofocus value="{{ old('name') }}">
-                @error('name')
+                <label for="balance" class="form-label">Withdrawal amount</label>
+                <input type="text" class="form-control @error('balance') is-invalid @enderror" id="balance"
+                    balance="balance" required autofocus value="{{ old('balance') }}">
+                @error('balance')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Create Wallet</button>
+            <button type="submit" class="btn btn-primary">Withdrawal</button>
         </form>
     </div>
 @endsection
