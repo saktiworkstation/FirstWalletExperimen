@@ -83,6 +83,7 @@ class WalletController extends Controller
      */
     public function destroy(Wallet $wallet)
     {
-        //
+        Wallet::destroy($wallet->id);
+        return redirect('/dashboard/wallets')->with('success', 'Wallets has been deleted!');
     }
 }
