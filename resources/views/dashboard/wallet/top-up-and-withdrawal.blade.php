@@ -7,7 +7,8 @@
 
     <div class="col-lg-8">
         <h2>Top Up</h2>
-        <form method="post" action="/dashboard/topup-withdrawal/topup" class="mb-5" enctype="multipart/form-data">
+        <form method="post" action="/dashboard/topup-and-withdrawal/top-up" class="mb-5" enctype="multipart/form-data">
+            @method('put')
             @csrf
             <div class="mb-3">
                 <label for="wallet" class="form-label">Selest a Wallet</label>
@@ -23,8 +24,8 @@
             </div>
             <div class="mb-3">
                 <label for="balance" class="form-label">Top up amount</label>
-                <input type="text" class="form-control @error('balance') is-invalid @enderror" id="balance"
-                    balance="balance" required autofocus value="{{ old('balance') }}">
+                <input type="number" class="form-control @error('balance') is-invalid @enderror" id="balance"
+                    name="balance" required autofocus value="{{ old('balance') }}">
                 @error('balance')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -38,6 +39,7 @@
     <div class="col-lg-8">
         <h2>Withdrawal</h2>
         <form method="post" action="/dashboard/topup-withdrawal/withdrawal" class="mb-5" enctype="multipart/form-data">
+            @method('put')
             @csrf
             <div class="mb-3">
                 <label for="wallet" class="form-label">Selest a Wallet</label>
@@ -53,8 +55,8 @@
             </div>
             <div class="mb-3">
                 <label for="balance" class="form-label">Withdrawal amount</label>
-                <input type="text" class="form-control @error('balance') is-invalid @enderror" id="balance"
-                    balance="balance" required autofocus value="{{ old('balance') }}">
+                <input type="number" class="form-control @error('balance') is-invalid @enderror" id="balance"
+                    name="balance" required autofocus value="{{ old('balance') }}">
                 @error('balance')
                     <div class="invalid-feedback">
                         {{ $message }}
