@@ -10,6 +10,18 @@
         <form method="post" action="/dashboard/topup-withdrawal/topup" class="mb-5" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
+                <label for="wallet" class="form-label">Selest a Wallet</label>
+                <select class="form-select" name="id" id="wallet">
+                    @foreach ($wallets as $wallet)
+                        @if (old('id') == $wallet->id)
+                            <option value="{{ $wallet->id }}" selected>{{ $wallet->name }}</option>
+                        @else
+                            <option value="{{ $wallet->id }}">{{ $wallet->name }}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
                 <label for="balance" class="form-label">Top up amount</label>
                 <input type="text" class="form-control @error('balance') is-invalid @enderror" id="balance"
                     balance="balance" required autofocus value="{{ old('balance') }}">
@@ -27,6 +39,18 @@
         <h2>Withdrawal</h2>
         <form method="post" action="/dashboard/topup-withdrawal/withdrawal" class="mb-5" enctype="multipart/form-data">
             @csrf
+            <div class="mb-3">
+                <label for="wallet" class="form-label">Selest a Wallet</label>
+                <select class="form-select" name="id" id="wallet">
+                    @foreach ($wallets as $wallet)
+                        @if (old('id') == $wallet->id)
+                            <option value="{{ $wallet->id }}" selected>{{ $wallet->name }}</option>
+                        @else
+                            <option value="{{ $wallet->id }}">{{ $wallet->name }}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </div>
             <div class="mb-3">
                 <label for="balance" class="form-label">Withdrawal amount</label>
                 <input type="text" class="form-control @error('balance') is-invalid @enderror" id="balance"

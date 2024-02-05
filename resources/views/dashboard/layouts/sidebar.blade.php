@@ -9,7 +9,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="/dashboard/">
+                <a class="nav-link {{ Request::is('/dashboard/topup-and-withdrawal*') ? 'active' : '' }}"
+                    href="/dashboard/topup-and-withdrawal">
                     <span data-feather="dollar-sign"></span>
                     Top Up and Withdrawal
                 </a>

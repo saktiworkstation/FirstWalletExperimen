@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
+use App\Http\Controllers\TopUpAndWithdrawal;
 use App\Http\Controllers\WalletController;
 use App\Models\Wallet;
 use Illuminate\Support\Facades\Route;
@@ -35,3 +36,5 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 Route::resource('dashboard/wallets', WalletController::class)->middleware('auth');
+
+Route::get('/dashboard/topup-and-withdrawal', [TopUpAndWithdrawal::class, 'index'])->middleware('auth');
