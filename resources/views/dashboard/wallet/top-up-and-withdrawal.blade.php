@@ -36,9 +36,17 @@
         </form>
     </div>
 
+    @if (session()->has('success'))
+        <div class="alert alert-warning alert-dismissible fade show col-lg-8" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <div class="col-lg-8">
         <h2>Withdrawal</h2>
-        <form method="post" action="/dashboard/topup-withdrawal/withdrawal" class="mb-5" enctype="multipart/form-data">
+        <form method="post" action="/dashboard/topup-and-withdrawal/withdrawal" class="mb-5"
+            enctype="multipart/form-data">
             @method('put')
             @csrf
             <div class="mb-3">

@@ -39,3 +39,4 @@ Route::resource('dashboard/wallets', WalletController::class)->middleware('auth'
 
 Route::get('/dashboard/topup-and-withdrawal', [TopUpAndWithdrawal::class, 'index'])->middleware('auth');
 Route::put('/dashboard/topup-and-withdrawal/top-up', [TopUpAndWithdrawal::class, 'storeTopUp'])->middleware('auth');
+Route::put('/dashboard/topup-and-withdrawal/withdrawal', [TopUpAndWithdrawal::class, 'storeWithdrawal'])->middleware('auth');

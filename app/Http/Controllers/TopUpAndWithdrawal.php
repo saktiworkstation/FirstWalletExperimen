@@ -34,7 +34,27 @@ class TopUpAndWithdrawal extends Controller
         return redirect('/dashboard')->with('success', 'Balance has been added successfully!');
     }
 
-    public function storeWithdrawal(){
+    public function storeWithdrawal(Request $request){
         // fungsi untuk menyimpan data withdrawal
+        $rules = [
+            'balance' => 'required|numeric|min:0'
+        ];
+        $wallet = Wallet::find($request->id);
+        $balance = $request->balance;
+
+        $oldBalance = $wallet->balance;
+        $newBalance = $oldBalance - $balance;
+
+        if($newBalance <= 0){
+            return redirect('/dashboard/topup-and-withdrawal')->with('success', 'Insufficient balance to withdraw');
+        } else {
+            $validatedData = $request->validate($rules);
+
+            $validatedData['balance'] = $newBalance;
+
+            Wallet::where('id', $request->id)->update($validatedData);
+
+            return redirect('/dashboard')->with('success', 'The balance has been successfully withdrawn!');
+        }
     }
 }
