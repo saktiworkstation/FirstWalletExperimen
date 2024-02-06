@@ -17,7 +17,11 @@ class BillFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => $this->faker->randomElement([0, 5]),
+            'bill_type' => $this->faker->randomElement([0, 5]),
+            'amount' => $this->faker->numberBetween(100, 10000), // Contoh nilai acak antara 100 dan 10000
+            'due_date' => $this->faker->date,
+            'status' => $this->faker->randomElement([0, 1])
         ];
     }
 }
