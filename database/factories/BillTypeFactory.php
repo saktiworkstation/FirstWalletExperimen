@@ -17,7 +17,7 @@ class BillTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'type' => fake()->name(),
         ];
     }
 }

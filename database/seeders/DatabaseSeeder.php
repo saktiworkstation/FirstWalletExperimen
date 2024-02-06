@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Bill;
+use App\Models\BillType;
 use App\Models\User;
 use App\Models\Wallet;
 use Illuminate\Database\Seeder;
@@ -32,6 +33,7 @@ class DatabaseSeeder extends Seeder
 
         User::factory(4)->create();
         Wallet::factory(5)->create();
+        BillType::factory(5)->create();
         Bill::factory(5)->create();
     }
 }
