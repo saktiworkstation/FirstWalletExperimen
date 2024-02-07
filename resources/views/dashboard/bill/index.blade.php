@@ -21,14 +21,14 @@
                             <div class="row g-0">
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">Bill Type : {{ $bill->bill_type }}</h5>
+                                        <h5 class="card-title">Bill Type : {{ $bill->BillType->type }}</h5>
                                         <p class="card-text">List of my bills : {{ $bill->amount }}</p>
                                         <p class="card-text"><small class="text-body-secondary">Due Date :
                                                 {{ $bill->due_date }}</small>
                                         </p>
                                         <a href="/dashboard/bills/{{ $bill->id }}/edit" class="btn btn-warning"><span
                                                 data-feather="edit"></span>
-                                            Change wallet name</a>
+                                            Pays bill</a>
                                     </div>
                                 </div>
                             </div>
