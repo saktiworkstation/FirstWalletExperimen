@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bill;
+use App\Models\Wallet;
 use Illuminate\Http\Request;
 
 class BillController extends Controller
@@ -48,6 +49,7 @@ class BillController extends Controller
     {
         return view('dashboard.bill.pay-bill', [
             'bill' => $bill,
+            'wallets' => Wallet::where('user_id', auth()->user()->id)->get()
         ]);
     }
 
