@@ -12,7 +12,9 @@ class BillController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.bill.index', [
+            'bills' => Bill::where('user_id', auth()->user()->id)->get(),
+        ]);
     }
 
     /**

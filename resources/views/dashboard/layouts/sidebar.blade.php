@@ -22,7 +22,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="/dashboard/">
+                <a class="nav-link {{ Request::is('dashboard/bills*') ? 'active' : '' }}" href="/dashboard/bills">
                     <span data-feather="credit-card"></span>
                     Bill Payments
                 </a>

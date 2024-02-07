@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BillController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\TopUpAndWithdrawal;
@@ -40,3 +41,5 @@ Route::resource('dashboard/wallets', WalletController::class)->middleware('auth'
 Route::get('/dashboard/topup-and-withdrawal', [TopUpAndWithdrawal::class, 'index'])->middleware('auth');
 Route::put('/dashboard/topup-and-withdrawal/top-up', [TopUpAndWithdrawal::class, 'storeTopUp'])->middleware('auth');
 Route::put('/dashboard/topup-and-withdrawal/withdrawal', [TopUpAndWithdrawal::class, 'storeWithdrawal'])->middleware('auth');
+
+Route::resource('dashboard/bills', BillController::class)->middleware('auth');
