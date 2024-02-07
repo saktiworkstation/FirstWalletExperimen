@@ -18,6 +18,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name of Wallet</th>
+                    <th scope="col">Wallet Owner</th>
                     <th scope="col">Balance</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -27,6 +28,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $wallet->name }}</td>
+                        <td>{{ $wallet->Owner->name }}</td>
                         <td>{{ $wallet->balance }}</td>
                         <td>
                             <form action="/dashboard/wallets/{{ $wallet->slug }}" method="post" class="d-inline">
