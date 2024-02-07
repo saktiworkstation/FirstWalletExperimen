@@ -46,7 +46,9 @@ class BillController extends Controller
      */
     public function edit(Bill $bill)
     {
-        //
+        return view('dashboard.bill.pay-bill', [
+            'bill' => $bill,
+        ]);
     }
 
     /**
