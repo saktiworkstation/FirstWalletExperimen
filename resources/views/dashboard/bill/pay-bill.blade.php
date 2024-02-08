@@ -32,10 +32,10 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="balance" class="form-label">Top up amount</label>
-                <input type="number" class="form-control @error('balance') is-invalid @enderror" id="balance"
-                    name="balance" required autofocus value="{{ old('balance') }}">
-                @error('balance')
+                <label for="amount" class="form-label">payment amount</label>
+                <input type="number" class="form-control @error('amount') is-invalid @enderror" id="amount"
+                    name="amount" required autofocus value="{{ old('amount') }}">
+                @error('amount')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
