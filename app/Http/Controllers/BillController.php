@@ -58,7 +58,53 @@ class BillController extends Controller
      */
     public function update(Request $request, Bill $bill)
     {
-        //
+        $rulesBill = [
+            'amount' => 'required|numeric|min:0'
+        ];
+        $rulesWallet = [
+            'balance' => 'numeric'
+        ];
+
+        // wallet operation
+        $wallet = Wallet::find($request->id);
+        $amount = $request->amount;
+
+        $oldBalance = $wallet->balance;
+        $newBalance = $oldBalance - $amount;
+
+        // bill operation
+        $bill = Bill::find($bill->id);
+        $newBillAmount = $bill->amount - $request->amount;
+
+        if($newBalance < 0){
+            return redirect('/dashboard/bills/'.$bill->id.'/edit')->with('success', 'Not enough wallet money');
+        } else {
+            if($newBillAmount > 0){
+                $validatedDataWallet = $request->validate($rulesWallet);
+                $validatedDataWallet['balance'] = $newBalance;
+
+                $validatedDataBill = $request->validate($rulesBill);
+                $validatedDataBill['amount'] = $newBillAmount;
+
+                Wallet::where('id', $request->id)->update($validatedDataWallet);
+                Bill::where('id', $bill->id)->update($validatedDataBill);
+
+                return redirect('/dashboard/bills')->with('success', 'Bill paid successfully. Not yet paid off');
+            }else if ($newBillAmount == 0) {
+                $validatedDataWallet = $request->validate($rulesWallet);
+                $validatedDataWallet['balance'] = $newBalance;
+
+                $validatedDataBill = $request->validate($rulesBill);
+                $validatedDataBill['amount'] = $newBillAmount;
+
+                Wallet::where('id', $request->id)->update($validatedDataWallet);
+                Bill::destroy('id', $bill->id);
+
+                return redirect('/dashboard/bills')->with('success', 'Bill paid successfully. Its paid off');
+            }else if ($newBillAmount < 0) {
+                return redirect('/dashboard/bills/'.$bill->id.'/edit')->with('success', 'The amount of money is too much');
+            }
+        }
     }
 
     /**
