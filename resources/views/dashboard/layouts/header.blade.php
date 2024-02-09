@@ -7,10 +7,10 @@
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-            <form action="/logout" method="post">
+            <form action="/sign-out" method="post">
                 @csrf
                 <button class="nav-link px-3 bg-dark border-0" type="submit">
-                    <i class="bi bi-box-arrow-in-right"></i>Logout <span data-feather="log-out"></span>
+                    <i class="bi bi-box-arrow-in-right"></i>Sign Out <span data-feather="log-out"></span>
                 </button>
             </form>
         </div>
