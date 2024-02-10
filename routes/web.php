@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeneficiariesController;
 use App\Http\Controllers\BillController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
@@ -43,3 +44,5 @@ Route::put('/dashboard/topup-and-withdrawal/top-up', [TopUpAndWithdrawal::class,
 Route::put('/dashboard/topup-and-withdrawal/withdrawal', [TopUpAndWithdrawal::class, 'storeWithdrawal'])->middleware('auth');
 
 Route::resource('dashboard/bills', BillController::class)->middleware('auth');
+
+Route::get('/dashboard/beneficiaries', [BeneficiariesController::class, 'index'])->middleware('auth');
