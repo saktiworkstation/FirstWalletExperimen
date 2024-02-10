@@ -17,7 +17,7 @@ class BeneficiariesFactory extends Factory
     public function definition(): array
     {
         return [
-            'wallet_id' => $this->faker->randomElement([0, 5]),
+            'wallet_id' => mt_rand(1, 5),
         ];
     }
 }
