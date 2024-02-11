@@ -46,3 +46,4 @@ Route::put('/dashboard/topup-and-withdrawal/withdrawal', [TopUpAndWithdrawal::cl
 Route::resource('dashboard/bills', BillController::class)->middleware('auth');
 
 Route::get('/dashboard/beneficiaries', [BeneficiariesController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/beneficiaries/add-wallet', [BeneficiariesController::class, 'addWallet'])->middleware('auth');
