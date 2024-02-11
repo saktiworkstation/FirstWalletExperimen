@@ -10,10 +10,10 @@
         <form method="post" action="/dashboard/topup-and-withdrawal/top-up" class="mb-5" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-                <label for="balance" class="form-label">Input Full Wallet Name</label>
-                <input type="number" class="form-control @error('balance') is-invalid @enderror" id="balance"
-                    name="balance" required autofocus value="{{ old('balance') }}">
-                @error('balance')
+                <label for="name" class="form-label">Input Full Wallet Name</label>
+                <input type="number" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
+                    required autofocus value="{{ old('name') }}">
+                @error('name')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
