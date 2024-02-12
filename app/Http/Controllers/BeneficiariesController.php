@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Beneficiaries;
 use App\Models\Wallet;
 use Illuminate\Http\Request;
 
@@ -17,8 +18,17 @@ class BeneficiariesController extends Controller
         return view('dashboard.transfer.add-wallet-to-transfer');
     }
 
-    public function storeWallet(){
+    public function storeWallet(Request $request){
         // menyimpan data wallet ke tabel Beneficiaries
+        $validatedData = $request->validate([
+            'wallet_id' => 'required'
+        ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        Beneficiaries::create($validatedData);
+
+        return redirect('/dashboard/beneficiaries')->with('success', 'Sign-up successfully! Please sign-in');
     }
 
     public function transfer(){
