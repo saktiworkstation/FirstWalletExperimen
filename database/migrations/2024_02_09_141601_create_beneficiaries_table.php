@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('beneficiaries', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->foreignId('wallet_id');
             $table->timestamps();
         });
