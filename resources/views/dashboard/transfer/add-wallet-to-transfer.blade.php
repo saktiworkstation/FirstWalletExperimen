@@ -6,14 +6,13 @@
     </div>
 
     <div class="col-lg-8">
-        <h2>Top Up</h2>
         <form method="post" action="/dashboard/topup-and-withdrawal/top-up" class="mb-5" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-                <label for="name" class="form-label">Input Full Wallet Name</label>
-                <input type="number" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
-                    required autofocus value="{{ old('name') }}">
-                @error('name')
+                <label for="wallet_id" class="form-label">Input Full Wallet Kode</label>
+                <input type="text" class="form-control @error('wallet_id') is-invalid @enderror" id="wallet_id"
+                    wallet_id="wallet_id" required autofocus value="{{ old('wallet_id') }}">
+                @error('wallet_id')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>

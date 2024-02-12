@@ -5,8 +5,10 @@
         <h1 class="h2">Money Transfer</h1>
     </div>
 
+    <a href="/dashboard/beneficiaries/add-wallet" class="btn btn-primary my-3">Add new Wallet to transfer</a>
+
     <div class="col-lg-8">
-        <h2>Top Up</h2>
+        <h2>Transfer</h2>
         <form method="post" action="/dashboard/topup-and-withdrawal/top-up" class="mb-5" enctype="multipart/form-data">
             @method('put')
             @csrf
@@ -32,7 +34,7 @@
                     </div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Top Up</button>
+            <button type="submit" class="btn btn-primary">Transfer</button>
         </form>
     </div>
 @endsection
