@@ -10,7 +10,7 @@ class BeneficiariesController extends Controller
 {
     public function index(){
         return view('dashboard.transfer.index', [
-            'wallets' => Wallet::all(),
+            'wallets' => Beneficiaries::where('user_id', auth()->user()->id)->get(),
         ]);
     }
 
@@ -28,7 +28,7 @@ class BeneficiariesController extends Controller
 
         Beneficiaries::create($validatedData);
 
-        return redirect('/dashboard/beneficiaries')->with('success', 'Sign-up successfully! Please sign-in');
+        return redirect('/dashboard/beneficiaries')->with('success', 'Beneficiaries Wallet has been added!');
     }
 
     public function transfer(){
