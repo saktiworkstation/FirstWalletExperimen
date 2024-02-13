@@ -11,6 +11,7 @@ class BeneficiariesController extends Controller
     public function index(){
         return view('dashboard.transfer.index', [
             'wallets' => Beneficiaries::where('user_id', auth()->user()->id)->get(),
+            'ownWallets' => Wallet::where('user_id', auth()->user()->id)->get(),
         ]);
     }
 
@@ -27,7 +28,7 @@ class BeneficiariesController extends Controller
         $wallets = Beneficiaries::where('user_id', auth()->user()->id)->get();
         foreach ($wallets as $wallet){
             if($wallet->wallet_id == $request->wallet_id){
-                return redirect('/dashboard/beneficiaries/add-wallet')->with('success', 'The wallet is there!');
+                return redirect('/dashboard/beneficiaries')->with('success', 'The wallet is there!');
             }else{
                 $validatedData['user_id'] = auth()->user()->id;
 
