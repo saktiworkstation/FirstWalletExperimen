@@ -17,9 +17,9 @@
                 <select class="form-select" name="id" id="wallet">
                     @foreach ($wallets as $wallet)
                         @if (old('id') == $wallet->id)
-                            <option value="{{ $wallet->id }}" selected>{{ $wallet->name }}</option>
+                            <option value="{{ $wallet->id }}" selected>{{ $wallet->Wallet->name }}</option>
                         @else
-                            <option value="{{ $wallet->id }}">{{ $wallet->name }}</option>
+                            <option value="{{ $wallet->id }}">{{ $wallet->Wallet->name }}</option>
                         @endif
                     @endforeach
                 </select>
