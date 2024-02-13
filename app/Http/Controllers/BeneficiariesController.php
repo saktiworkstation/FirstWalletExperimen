@@ -40,7 +40,34 @@ class BeneficiariesController extends Controller
 
     }
 
-    public function transfer(){
+    public function transfer(Request $request){
         // fungsi men transfer uang ke wallet tujuan
+        $rules = [
+            'balance' => 'required|numeric|min:0'
+        ];
+        $wallet = Wallet::find($request->idW);
+        $walletTF = Wallet::find($request->idTF);
+        $balance = $request->balance;
+
+        $oldBalanceW = $wallet->balance;
+        $newBalanceW = $oldBalanceW - $balance;
+
+        $oldBalanceTF = $walletTF->balance;
+        $newBalanceTF = $oldBalanceTF - $balance;
+
+        if($newBalanceW <= 0){
+            return redirect('/dashboard/beneficiaries')->with('success', 'Insufficient balance to withdraw');
+        } else {
+            $validatedDataW = $request->validate($rules);
+            $validatedDataW['balance'] = $newBalanceW;
+
+            $validatedDataTF = $request->validate($rules);
+            $validatedDataTF['balance'] = $newBalanceTF;
+
+            Wallet::where('id', $request->idW)->update($validatedDataW);
+            Wallet::where('id', $request->idTF)->update($validatedDataTF);
+
+            return redirect('/dashboard/beneficiaries')->with('success', 'The balance has been successfully withdrawn!');
+        }
     }
 }

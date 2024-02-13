@@ -20,8 +20,8 @@
             @method('put')
             @csrf
             <div class="mb-3">
-                <label for="wallet" class="form-label">Selest a Wallet to Transfer</label>
-                <select class="form-select" name="id" id="wallet">
+                <label for="walletTF" class="form-label">Selest a Wallet to Transfer</label>
+                <select class="form-select" name="idTF" id="walletTF">
                     @foreach ($wallets as $wallet)
                         @if (old('id') == $wallet->id)
                             <option value="{{ $wallet->id }}" selected>{{ $wallet->Wallet->name }}</option>
@@ -33,7 +33,7 @@
             </div>
             <div class="mb-3">
                 <label for="wallet" class="form-label">Selest a Wallet to Transfer</label>
-                <select class="form-select" name="id" id="wallet">
+                <select class="form-select" name="idW" id="wallet">
                     @foreach ($ownWallets as $wallet)
                         @if (old('id') == $wallet->id)
                             <option value="{{ $wallet->id }}" selected>{{ $wallet->name }}</option>
