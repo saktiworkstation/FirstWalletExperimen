@@ -5,6 +5,13 @@
         <h1 class="h2">Money Transfer</h1>
     </div>
 
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show col-lg-8" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <a href="/dashboard/beneficiaries/add-wallet" class="btn btn-primary my-3">Add new Wallet to transfer</a>
 
     <div class="col-lg-8">

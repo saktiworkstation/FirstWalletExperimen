@@ -24,11 +24,19 @@ class BeneficiariesController extends Controller
             'wallet_id' => 'required'
         ]);
 
-        $validatedData['user_id'] = auth()->user()->id;
+        $wallets = Beneficiaries::where('user_id', auth()->user()->id)->get();
+        foreach ($wallets as $wallet){
+            if($wallet->wallet_id == $request->wallet_id){
+                return redirect('/dashboard/beneficiaries/add-wallet')->with('success', 'The wallet is there!');
+            }else{
+                $validatedData['user_id'] = auth()->user()->id;
 
-        Beneficiaries::create($validatedData);
+                Beneficiaries::create($validatedData);
 
-        return redirect('/dashboard/beneficiaries')->with('success', 'Beneficiaries Wallet has been added!');
+                return redirect('/dashboard/beneficiaries')->with('success', 'Beneficiaries Wallet has been added!');
+            }
+        }
+
     }
 
     public function transfer(){
