@@ -8,6 +8,7 @@ use App\Models\Bill;
 use App\Models\User;
 use App\Models\Wallet;
 use App\Models\BillType;
+use App\Models\Transactions;
 use App\Models\Beneficiaries;
 use Illuminate\Database\Seeder;
 
@@ -37,5 +38,6 @@ class DatabaseSeeder extends Seeder
         BillType::factory(5)->create();
         Bill::factory(5)->create();
         Beneficiaries::factory(5)->create();
+        Transactions::factory(5)->create();
     }
 }

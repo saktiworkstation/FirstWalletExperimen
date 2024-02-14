@@ -17,7 +17,11 @@ class TransactionsFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id_sender' => mt_rand(1, 5),
+            'user_id_receiver' => mt_rand(1, 5),
+            'transaction_type' => mt_rand(1, 5),
+            'amount' => $this->faker->numberBetween(100, 10000),
+            'description' => $this->faker->paragraph(1, 2),
         ];
     }
 }
