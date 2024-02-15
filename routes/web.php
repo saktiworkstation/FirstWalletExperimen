@@ -5,6 +5,7 @@ use App\Http\Controllers\BillController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\TopUpAndWithdrawal;
+use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\WalletController;
 use App\Models\Wallet;
 use Illuminate\Support\Facades\Route;
@@ -48,3 +49,5 @@ Route::resource('dashboard/bills', BillController::class)->middleware('auth');
 Route::get('/dashboard/beneficiaries', [BeneficiariesController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/beneficiaries/add-wallet', [BeneficiariesController::class, 'addWallet'])->middleware('auth');
 Route::post('/dashboard/beneficiaries/add-wallet', [BeneficiariesController::class, 'storeWallet'])->middleware('auth');
+
+Route::get('/dashboard/transactions', [TransactionsController::class, 'index'])->middleware('auth');

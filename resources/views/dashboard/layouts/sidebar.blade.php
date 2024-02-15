@@ -40,7 +40,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="/dashboard/">
+                <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="/dashboard/transactions">
                     <span data-feather="flag"></span>
                     Reports and Analysis
                 </a>

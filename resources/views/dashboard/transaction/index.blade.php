@@ -26,14 +26,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($wallets as $wallet)
+                @foreach ($transactions as $transaction)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $wallet->name }}</td>
-                        <td>{{ $wallet->Owner->name }}</td>
-                        <td>{{ $wallet->balance }}</td>
+                        <td>{{ $transaction->user_id_sender }}</td>
+                        <td>{{ $transaction->user_id_receiver }}</td>
+                        <td>{{ $transaction->transaction_type }}</td>
+                        <td>{{ $transaction->amount }}</td>
+                        <td>{{ $transaction->description }}</td>
                         <td>
-                            <form action="/dashboard/wallets/{{ $wallet->slug }}" method="post" class="d-inline">
+                            <form action="/dashboard/transactions/{{ $transaction->slug }}" method="post" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">
