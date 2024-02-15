@@ -12,7 +12,7 @@
         </div>
     @endif
 
-    <div class="table-responsive col-lg-8">
+    <div class="table-responsive col-lg-12">
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
@@ -22,27 +22,17 @@
                     <th scope="col">Type of transaction</th>
                     <th scope="col">Amount</th>
                     <th scope="col">Descriptions</th>
-                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($transactions as $transaction)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $transaction->user_id_sender }}</td>
-                        <td>{{ $transaction->user_id_receiver }}</td>
+                        <td>{{ $transaction->UserSender->name }}</td>
+                        <td>{{ $transaction->UserReceiver->name }}</td>
                         <td>{{ $transaction->transaction_type }}</td>
                         <td>{{ $transaction->amount }}</td>
                         <td>{{ $transaction->description }}</td>
-                        <td>
-                            <form action="/dashboard/transactions/{{ $transaction->slug }}" method="post" class="d-inline">
-                                @method('delete')
-                                @csrf
-                                <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">
-                                    <span data-feather="x-circle"></span>
-                                </button>
-                            </form>
-                        </td>
                     </tr>
                 @endforeach
             </tbody>
