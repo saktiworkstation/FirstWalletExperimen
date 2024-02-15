@@ -30,7 +30,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $transaction->UserSender->name }}</td>
                         <td>{{ $transaction->UserReceiver->name }}</td>
-                        <td>{{ $transaction->transaction_type }}</td>
+                        <td>{{ $transaction->BillType->type }}</td>
                         <td>{{ $transaction->amount }}</td>
                         <td>{{ $transaction->description }}</td>
                     </tr>
