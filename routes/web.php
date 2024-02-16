@@ -51,3 +51,5 @@ Route::get('/dashboard/beneficiaries/add-wallet', [BeneficiariesController::clas
 Route::post('/dashboard/beneficiaries/add-wallet', [BeneficiariesController::class, 'storeWallet'])->middleware('auth');
 
 Route::get('/dashboard/transactions', [TransactionsController::class, 'index'])->middleware('auth');
+
+Route::get('/dashboard/services', [TransactionsController::class, 'index'])->middleware('auth');
