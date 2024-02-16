@@ -35,6 +35,12 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="/dashboard/">
+                    <span data-feather="shopping-bag"></span>
+                    Services
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="/dashboard/">
                     <span data-feather="gift"></span>
                     Promotions and Discounts
                 </a>
