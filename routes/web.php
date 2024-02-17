@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BeneficiariesController;
 use App\Http\Controllers\BillController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\TopUpAndWithdrawal;
@@ -52,4 +53,4 @@ Route::post('/dashboard/beneficiaries/add-wallet', [BeneficiariesController::cla
 
 Route::get('/dashboard/transactions', [TransactionsController::class, 'index'])->middleware('auth');
 
-Route::get('/dashboard/services', [TransactionsController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/services', [ServiceController::class, 'index'])->middleware('auth');
