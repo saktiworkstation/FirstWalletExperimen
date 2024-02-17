@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BillType;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -15,6 +16,8 @@ class ServiceController extends Controller
     }
 
     public function BillPurchase(){
-        return view('dashboard.service.bill-purchase.index');
+        return view('dashboard.service.bill-purchase.index', [
+            'billTypes' => BillType::latest()->get()
+        ]);
     }
 }
