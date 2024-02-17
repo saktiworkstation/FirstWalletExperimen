@@ -21,7 +21,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">Online Store</h5>
                                 <p class="card-text">You can choose from a variety of stores affiliated with us</p>
-                                <a href="/dashboard/wallets/edit" class="btn btn-warning"><span data-feather="edit"></span>
+                                <a href="/dashboard/services/online-store" class="btn btn-warning"><span
+                                        data-feather="edit"></span>
                                     Heading to the shop</a>
                             </div>
                         </div>
