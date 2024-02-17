@@ -15,6 +15,6 @@ class ServiceController extends Controller
     }
 
     public function BillPurchase(){
-        //
+        return view('dashboard.service.bill-purchase.index');
     }
 }

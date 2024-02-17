@@ -2,7 +2,7 @@
 
 @section('container')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Our Services</h1>
+        <h1 class="h2">Bill Purchase</h1>
     </div>
 
     @if (session()->has('success'))
@@ -19,11 +19,11 @@
                     <div class="row g-0">
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">Online Store</h5>
+                                <h5 class="card-title">Bill Type 1</h5>
                                 <p class="card-text">You can choose from a variety of stores affiliated with us</p>
                                 <a href="/dashboard/services/online-store" class="btn btn-warning"><span
                                         data-feather="edit"></span>
-                                    Heading to the shop</a>
+                                    Heading to the bill</a>
                             </div>
                         </div>
                     </div>
@@ -34,12 +34,11 @@
                     <div class="row g-0">
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">Bill Purchase</h5>
+                                <h5 class="card-title">Bill type 2</h5>
                                 <p class="card-text">Buy bills for emergency needs, by getting the benefits now and paying
                                     later</p>
-                                <a href="/dashboard/services/bill-purchase" class="btn btn-warning"><span
-                                        data-feather="edit"></span>
-                                    Heading to the shop</a>
+                                <a href="/dashboard/wallets/edit" class="btn btn-warning"><span data-feather="edit"></span>
+                                    Heading to the bill</a>
                             </div>
                         </div>
                     </div>

@@ -56,3 +56,5 @@ Route::get('/dashboard/transactions', [TransactionsController::class, 'index'])-
 Route::get('/dashboard/services', [ServiceController::class, 'index'])->middleware('auth');
 
 Route::get('/dashboard/services/online-store', [ServiceController::class, 'OnlineStore'])->middleware('auth');
+
+Route::get('/dashboard/services/bill-purchase', [ServiceController::class, 'BillPurchase'])->middleware('auth');
