@@ -20,4 +20,8 @@ class ServiceController extends Controller
             'billTypes' => BillType::latest()->get()
         ]);
     }
+
+    public function SingleBillType(){
+        //
+    }
 }
