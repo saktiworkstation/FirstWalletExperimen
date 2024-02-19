@@ -17,7 +17,11 @@ class PromotionFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => $this->faker->sentence,
+            'description' => $this->faker->paragraph,
+            'discount_amount' => $this->faker->numberBetween(5, 50), // nilai acak antara 5 dan 50
+            'start_date' => $this->faker->date,
+            'end_date' => $this->faker->date,
         ];
     }
 }
