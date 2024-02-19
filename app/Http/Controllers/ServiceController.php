@@ -21,7 +21,9 @@ class ServiceController extends Controller
         ]);
     }
 
-    public function SingleBillType(){
-        //
+    public function SingleBillType(BillType $billType){
+        return view('dashboard.service.bill-purchase.single-bill-type', [
+            'billType' => $billType
+        ]);
     }
 }

@@ -20,4 +20,9 @@ class BillType extends Model
     public function Transaction(){
         return $this->hasMany(Transactions::class);
     }
+
+    public function getRouteKeyName()
+    {
+        return 'type';
+    }
 }

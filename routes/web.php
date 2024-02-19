@@ -58,3 +58,4 @@ Route::get('/dashboard/services', [ServiceController::class, 'index'])->middlewa
 Route::get('/dashboard/services/online-store', [ServiceController::class, 'OnlineStore'])->middleware('auth');
 
 Route::get('/dashboard/services/bill-purchase', [ServiceController::class, 'BillPurchase'])->middleware('auth');
+Route::get('/dashboard/services/bill-purchase/single/{billType:type}', [ServiceController::class, 'SingleBillType'])->middleware('auth');

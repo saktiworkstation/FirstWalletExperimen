@@ -21,8 +21,8 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">Bill Type : {{ $billType->type }}</h5>
-                                    <a href="/dashboard/services/online-store" class="btn btn-warning"><span
-                                            data-feather="edit"></span>
+                                    <a href="/dashboard/services/bill-purchase/single/{{ $billType->type }}"
+                                        class="btn btn-warning"><span data-feather="edit"></span>
                                         Heading to the bill</a>
                                 </div>
                             </div>
