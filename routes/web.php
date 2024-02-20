@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BeneficiariesController;
 use App\Http\Controllers\BillController;
+use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
@@ -59,3 +60,5 @@ Route::get('/dashboard/services/online-store', [ServiceController::class, 'Onlin
 
 Route::get('/dashboard/services/bill-purchase', [ServiceController::class, 'BillPurchase'])->middleware('auth');
 Route::get('/dashboard/services/bill-purchase/single/{billType:type}', [ServiceController::class, 'SingleBillType'])->middleware('auth');
+
+Route::get('/dashboard/promotions', [PromotionController::class, 'index'])->middleware('auth');
