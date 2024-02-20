@@ -10,6 +10,7 @@ use App\Models\Wallet;
 use App\Models\BillType;
 use App\Models\Transactions;
 use App\Models\Beneficiaries;
+use App\Models\Promotion;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -39,5 +40,6 @@ class DatabaseSeeder extends Seeder
         Bill::factory(5)->create();
         Beneficiaries::factory(5)->create();
         Transactions::factory(5)->create();
+        Promotion::factory(5)->create();
     }
 }
